@@ -12,6 +12,7 @@ def search_insert(nums, target) -> int:
         else:
             left = mid + 1
         mid = (left + right) // 2
-    print(f'left: {left}, mid: {mid}, right: {right}')
+    print(f'\n\nleft: {left}, mid: {mid}, right: {right}')
+    return mid if mid >= 0 and nums[mid] >= target else mid + 1
 
-print(search_insert([1,3,5,7], target=8))
+print(search_insert([1,3,5,6], target=7))
