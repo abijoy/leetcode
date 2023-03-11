@@ -8,7 +8,6 @@ def plus_one(digits):
             # num = digits[i] + 1
             digits[i] = 0
             reminder = 1
-    print(reminder)
     return digits if reminder == 0 else [1] + digits
 
         
