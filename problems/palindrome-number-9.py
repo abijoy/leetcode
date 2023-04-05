@@ -1,19 +1,17 @@
-# check palindrome wihout converting it in string
-def isPalindrome(x: int) -> bool:
-    digits = []
-    num = x
-    while x > 0:
-        # print(x % 10, end=" ")
-        digits.append(x % 10)
-        x = x // 10
-    multiplier = 1
-    rev_num = 0
-    for d in reversed(digits):
-        rev_num += d * multiplier
-        multiplier *= 10
-    print(num)
-    print(digits)
-    print(rev_num)
-    return num == rev_num
-    
-print(isPalindrome(-121))
+
+# check if a number is a palindrome without converting it into string.
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0 or (x != 0 and x % 10 == 0):
+            return False
+        
+        # we just need to check if two halves are equal
+        # to be a palindrome number
+        half = 0
+        while x > half:
+            # move last digit of x onto half
+            half = (half * 10) + (x % 10)
+            
+            # update x
+            x = x // 10
+        return x == half or x == half // 10
